@@ -10,10 +10,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blueGrey[900],
+        backgroundColor: Color(0xff07b4d2),
         appBar: AppBar(
           title: Text('I Am Poor'),
-          backgroundColor: Colors.blueGrey[900],
+          backgroundColor: Color(0xff00555a),
         ),
         body: Center(
           child: Image(

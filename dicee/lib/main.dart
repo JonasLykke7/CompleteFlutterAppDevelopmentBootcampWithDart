@@ -24,12 +24,15 @@ class MyApp extends StatelessWidget {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var leftDiceNumber = 1;
+    var rightDiceNumber = 1;
+
     return Center(
       child: Row(
         children: <Widget>[
           Expanded(
             child: TextButton(
-              child: Image.asset('images/dice1.png'),
+              child: Image.asset('images/dice$leftDiceNumber.png'),
               onPressed: () {
                 print('Left button got pressed.');
               },
@@ -37,7 +40,7 @@ class DicePage extends StatelessWidget {
           ),
           Expanded(
             child: TextButton(
-              child: Image.asset('images/dice1.png'),
+              child: Image.asset('images/dice$rightDiceNumber.png'),
               onPressed: () {
                 print('Right button got pressed.');
               },

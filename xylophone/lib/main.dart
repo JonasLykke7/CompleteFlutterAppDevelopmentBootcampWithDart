@@ -1,4 +1,4 @@
-import 'package:english_words/english_words.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,14 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Center(
-            child: Text(nouns.last),
+            child: TextButton(
+              child: Text('Click Me'),
+              onPressed: () async {
+                final audioCache = AudioCache();
+
+                audioCache.play('note1.wav');
+              },
+            ),
           ),
         ),
       ),

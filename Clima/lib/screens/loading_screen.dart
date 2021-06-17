@@ -14,9 +14,6 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
-  double latitude;
-  double longitude;
-
   @override
   void initState() {
     super.initState();
@@ -29,11 +26,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
     await location.getCurrentLocation();
 
-    latitude = location.latitude;
-    longitude = location.longitude;
-
     NetworkHelper networkHelper = NetworkHelper(
-        'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&units=metric&appid=$apiKey');
+        'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=$apiKey');
 
     var weatherData = await networkHelper.getData();
 
@@ -41,7 +35,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
       context,
       MaterialPageRoute(
         builder: (context) {
-          return LocationScreen();
+          return LocationScreen(
+            locationWeather: weatherData,
+          );
         },
       ),
     );

@@ -22,13 +22,7 @@ class TasksScreen extends StatelessWidget {
               padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom,
               ),
-              child: AddTaskScreen((newTaskTitle) {
-                // Provider.of<TaskData>(context).tasks.add(
-                //       Task(name: newTaskTitle),
-                //     );
-
-                Navigator.pop(context);
-              }),
+              child: AddTaskScreen(),
             ),
           );
         },
